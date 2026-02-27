@@ -1,25 +1,37 @@
-import java.util.Scanner;
+public class UseCase2PalindromeCheckerApp {
 
-public class Palindrome {
+    static final String APP_VERSION = "1.0";
+
+    // Main Method - Entry Point
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        int num, original, remainder, reverse = 0;
+        System.out.println("======================================");
+        System.out.println("     HARDCODED PALINDROME CHECKER     ");
+        System.out.println("======================================");
+        System.out.println("Application Name : Palindrome Checker App");
+        System.out.println("Application Version : " + APP_VERSION);
+        System.out.println("======================================");
 
-        System.out.print("Enter a number: ");
-        num = sc.nextInt();
+        // Hardcoded String Literal
+        String word = "madam";
 
-        original = num;
+        System.out.println("Hardcoded String : " + word);
 
-        while (num != 0) {
-            remainder = num % 10;
-            reverse = reverse * 10 + remainder;
-            num = num / 10;
+        // Reverse the string
+        String reversed = "";
+
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed = reversed + word.charAt(i);
         }
 
-        if (original == reverse)
-            System.out.println("Palindrome number");
-        else
-            System.out.println("Not a palindrome");
+        // Conditional Check
+        if (word.equals(reversed)) {
+            System.out.println("Result: The string is a PALINDROME.");
+        } else {
+            System.out.println("Result: The string is NOT a palindrome.");
+        }
+
+        System.out.println("======================================");
+        System.out.println("Program Ended Successfully.");
     }
 }
